@@ -1,12 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import { Router, Switch, Route, Redirect } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import App from './layouts/App';
+import reducer from './reducers';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min';
+import 'popper.js/dist/umd/popper.min';
+import './assets/fontawesome-free-5.8.1-web/css/all.min.css';
+import './assets/css/style.css';
+
+const store = createStore(reducer);
+const hist = createBrowserHistory();
+
+
+ReactDOM.render(
+    <Provider store={store}>
+        <Router history={hist}>
+            <Switch>
+                <Route path="/app" render={() => <App/> }/>
+                <Redirect to="/app/home" from="/"/>
+            </Switch>
+        </Router>
+    </Provider>,
+    document.querySelector('#root')
+)
