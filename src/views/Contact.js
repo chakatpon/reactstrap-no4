@@ -32,11 +32,11 @@ class Contact extends React.Component {
               <h4>Get In Touch</h4>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, odio!</p>
               <h4>Address</h4>
-              <p>550 Main st, Boston MA</p>
+              <p>58/139 S.Bangkrua sai-noi 7 T.Bangkruai A.Bangkruai Nonthaburi 11130</p>
               <h4>Email</h4>
-              <p>test@test.com</p>
+              <p>giraffeman180@gmail.com</p>
               <h4>Phone</h4>
-              <p>(555) 555-5555</p>
+              <p>(091) 079-2775</p>
             </div>
           </div>
         </div>
